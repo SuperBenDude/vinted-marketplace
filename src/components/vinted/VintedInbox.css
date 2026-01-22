@@ -1,0 +1,306 @@
+.vinted-inbox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #181c1c;
+  color: #ffffff;
+  font-family: 'Inter', 'Helvetica Neue', 'Helvetica-Neue', Arial, sans-serif;
+  padding-top: env(safe-area-inset-top);
+}
+
+.vinted-inbox-header {
+  padding: 14px 16px 10px;
+  text-align: center;
+  background-color: #181c1c;
+}
+
+.vinted-inbox-header h1 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #c8d0d1;
+  letter-spacing: 0.2px;
+}
+
+/* Tabs */
+.vinted-tabs {
+  display: flex;
+  padding: 0;
+  background-color: #181c1c;
+  border-bottom: 1px solid #232a2b;
+}
+
+.vinted-tab {
+  flex: 1;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  color: #5a6466;
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+  text-align: center;
+}
+
+.vinted-tab.active {
+  color: #b8c0c1;
+}
+
+.vinted-tab:disabled {
+  color: #5a7078;
+  cursor: default;
+}
+
+.vinted-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #09b1ba;
+}
+
+/* Edit Banner */
+.vinted-edit-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #09b1ba;
+  color: #07141c;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Conversation List */
+.vinted-conversation-list {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #181c1c;
+}
+
+.vinted-conversation-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #232a2b;
+  background-color: #181c1c;
+}
+
+.vinted-conversation-item:active {
+  background-color: #232929;
+}
+
+.vinted-conversation-item.unread {
+  background-color: #1b2627;
+}
+
+.vinted-conversation-item.edit-mode {
+  cursor: default;
+}
+
+.vinted-avatar-wrapper {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  margin-right: 12px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.vinted-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.vinted-avatar img,
+.vinted-avatar .editable-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.vinted-avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2d3536;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vinted-default-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: -4px;
+}
+
+.vinted-avatar-icon {
+  width: 22px;
+  height: 22px;
+  color: #4a5657;
+}
+
+.vinted-avatar-placeholder.has-color {
+  background-color: #17a5ad;
+}
+
+.vinted-avatar-initial {
+  font-size: 16px;
+  font-weight: 500;
+  color: #0b1a21;
+  text-transform: uppercase;
+}
+
+.vinted-conversation-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.vinted-conversation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.vinted-username {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.vinted-time {
+  font-size: 14px;
+  color: #93a0a2;
+  flex-shrink: 0;
+  margin-left: 8px;
+  font-weight: 375;
+}
+
+.vinted-conversation-preview {
+  font-size: 16px;
+  color: #9fa8a9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+  font-weight: 375;
+  line-height: 1.4;
+}
+
+.vinted-product-thumb {
+  width: 32px;
+  height: 32px;
+  margin-top: 2px;
+}
+
+.vinted-product-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.vinted-product-image img,
+.vinted-product-image .editable-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.vinted-delete-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: rgba(239, 68, 68, 0.2);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ef4444;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.vinted-delete-btn:hover {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+/* Bottom Navigation */
+.vinted-bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: calc(96px + env(safe-area-inset-bottom));
+  padding-bottom: calc(20px + env(safe-area-inset-bottom));
+  background-color: #181c1c;
+  border-top: 1px solid #2a2a2a;
+}
+
+.vinted-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: #7a8485;
+  font-size: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+  min-width: 56px;
+}
+
+.vinted-nav-item.active {
+  color: #09b1ba;
+}
+
+.vinted-nav-item .nav-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+}
+
+.vinted-nav-item svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.5;
+}
+
+.vinted-nav-badge {
+  position: absolute;
+  top: -2px;
+  right: -8px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  background-color: #e53935;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

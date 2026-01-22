@@ -1,0 +1,129 @@
+.message-row {
+  display: flex;
+  align-items: flex-end;
+  padding: 1px 12px;
+  max-width: 100%;
+}
+
+.message-row.sent {
+  justify-content: flex-end;
+}
+
+.message-row.received {
+  justify-content: flex-start;
+}
+
+.avatar-space {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.message-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.bubble-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 75%;
+}
+
+.message-row.received .bubble-container {
+  align-items: flex-start;
+}
+
+.message-bubble {
+  padding: 8px 12px;
+  border-radius: 18px;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.message-bubble.sent {
+  background-color: #0084ff;
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+}
+
+.message-bubble.received {
+  background-color: #e4e6eb;
+  color: #050505;
+  border-bottom-left-radius: 4px;
+}
+
+.message-text {
+  font-size: 15px;
+  line-height: 1.36;
+}
+
+/* Thumbs up styling */
+.thumbs-up-large {
+  font-size: 44px;
+  line-height: 1;
+}
+
+.thumbs-up-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.thumbs-up-large-sent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Read receipt avatar */
+.read-receipt-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.read-receipt-avatar {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Edit Mode Styles */
+.message-row.edit-mode {
+  position: relative;
+}
+
+.message-row.edit-mode:hover {
+  background: rgba(8, 102, 255, 0.05);
+}
+
+.delete-message-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ef4444;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  margin: 0 4px;
+  opacity: 0;
+}
+
+.message-row.edit-mode:hover .delete-message-btn {
+  opacity: 1;
+}
+
+.delete-message-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}

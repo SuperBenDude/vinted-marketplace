@@ -1,0 +1,344 @@
+{
+  "currentUser": {
+    "id": "me",
+    "name": "You",
+    "avatar": "https://i.pravatar.cc/150?img=68"
+  },
+  "conversations": [
+    {
+      "id": "1",
+      "participant": {
+        "id": "user1",
+        "name": "Miki",
+        "avatar": "https://i.pravatar.cc/150?img=1",
+        "isOnline": false
+      },
+      "product": {
+        "id": "prod1",
+        "title": "50 x YODEL lunch bags / boxes 20cm (L) x...",
+        "price": 25,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop",
+        "status": "available"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user1",
+          "text": "Hi",
+          "timestamp": "2026-01-16T18:49:00Z",
+          "status": "read"
+        },
+        {
+          "id": "m2",
+          "senderId": "me",
+          "text": "👍",
+          "timestamp": "2026-01-16T18:50:00Z",
+          "status": "read"
+        }
+      ],
+      "lastMessage": {
+        "text": "👍",
+        "timestamp": "2026-01-16T18:50:00Z",
+        "isFromMe": true,
+        "status": "read"
+      },
+      "unreadCount": 0,
+      "isTyping": false
+    },
+    {
+      "id": "2",
+      "participant": {
+        "id": "user2",
+        "name": "Kies",
+        "avatar": "https://i.pravatar.cc/150?img=11",
+        "isOnline": false
+      },
+      "product": {
+        "id": "prod2",
+        "title": "50 x YODEL lunch bags / boxes 20cm (L) x...",
+        "price": 25,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop",
+        "status": "available"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user2",
+          "text": "Is this still available?",
+          "timestamp": "2026-01-10T10:00:00Z",
+          "status": "read"
+        },
+        {
+          "id": "m2",
+          "senderId": "me",
+          "text": "Hi b388bj",
+          "timestamp": "2026-01-10T10:15:00Z",
+          "status": "read"
+        }
+      ],
+      "lastMessage": {
+        "text": "Hi b388bj",
+        "timestamp": "2026-01-10T10:15:00Z",
+        "isFromMe": true,
+        "status": "read"
+      },
+      "unreadCount": 0,
+      "isTyping": false
+    },
+    {
+      "id": "3",
+      "participant": {
+        "id": "user3",
+        "name": "Rahel",
+        "avatar": "https://i.pravatar.cc/150?img=5",
+        "isOnline": false
+      },
+      "product": {
+        "id": "prod3",
+        "title": "50 x YODEL lunch bags / boxes 20cm (L) x...",
+        "price": 25,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop",
+        "status": "available"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user3",
+          "text": "Is this still available?",
+          "timestamp": "2026-01-08T22:45:00Z",
+          "status": "read"
+        },
+        {
+          "id": "m2",
+          "senderId": "me",
+          "text": "👍",
+          "timestamp": "2026-01-08T22:50:00Z",
+          "status": "read"
+        },
+        {
+          "id": "m3",
+          "senderId": "user3",
+          "text": "What's the lowest can you do",
+          "timestamp": "2026-01-08T23:00:00Z",
+          "status": "read"
+        }
+      ],
+      "lastMessage": {
+        "text": "What's the lowest can you do",
+        "timestamp": "2026-01-08T23:00:00Z",
+        "isFromMe": false,
+        "status": "read"
+      },
+      "unreadCount": 0,
+      "isTyping": false
+    },
+    {
+      "id": "4",
+      "participant": {
+        "id": "user4",
+        "name": "Jony",
+        "avatar": "https://i.pravatar.cc/150?img=12",
+        "isOnline": true
+      },
+      "product": {
+        "id": "prod4",
+        "title": "50 x YODEL lunch bags / boxes 20cm (L) x...",
+        "price": 25,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop",
+        "status": "available"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user4",
+          "text": "Is this still available?",
+          "timestamp": "2026-01-03T14:30:00Z",
+          "status": "read"
+        },
+        {
+          "id": "m2",
+          "senderId": "me",
+          "text": "B388bj if it...",
+          "timestamp": "2026-01-03T14:45:00Z",
+          "status": "read"
+        }
+      ],
+      "lastMessage": {
+        "text": "B388bj if it...",
+        "timestamp": "2026-01-03T14:45:00Z",
+        "isFromMe": true,
+        "status": "read"
+      },
+      "unreadCount": 0,
+      "isTyping": false
+    },
+    {
+      "id": "5",
+      "participant": {
+        "id": "user5",
+        "name": "Nigel",
+        "avatar": "https://i.pravatar.cc/150?img=68",
+        "isOnline": true
+      },
+      "product": {
+        "id": "prod5",
+        "title": "Office chair with armrests",
+        "price": 45,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=200&h=200&fit=crop",
+        "status": "available"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user5",
+          "text": "Hi, is this still available?",
+          "timestamp": "2025-12-10T09:00:00Z",
+          "status": "read"
+        },
+        {
+          "id": "m2",
+          "senderId": "me",
+          "text": "Hi,...",
+          "timestamp": "2025-12-10T09:15:00Z",
+          "status": "read"
+        }
+      ],
+      "lastMessage": {
+        "text": "Hi,...",
+        "timestamp": "2025-12-10T09:15:00Z",
+        "isFromMe": true,
+        "status": "read"
+      },
+      "unreadCount": 0,
+      "isTyping": false
+    },
+    {
+      "id": "6",
+      "participant": {
+        "id": "user6",
+        "name": "Edward",
+        "avatar": "https://i.pravatar.cc/150?img=33",
+        "isOnline": false
+      },
+      "product": {
+        "id": "prod6",
+        "title": "Hera sculpture statue",
+        "price": 85,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1544413660-299165566b1d?w=200&h=200&fit=crop",
+        "status": "available"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user6",
+          "text": "Is this still available?",
+          "timestamp": "2025-11-17T16:00:00Z",
+          "status": "read"
+        },
+        {
+          "id": "m2",
+          "senderId": "me",
+          "text": "Her...",
+          "timestamp": "2025-11-17T16:30:00Z",
+          "status": "read"
+        }
+      ],
+      "lastMessage": {
+        "text": "Her...",
+        "timestamp": "2025-11-17T16:30:00Z",
+        "isFromMe": true,
+        "status": "read"
+      },
+      "unreadCount": 0,
+      "isTyping": false
+    },
+    {
+      "id": "7",
+      "participant": {
+        "id": "user7",
+        "name": "Ionut",
+        "avatar": "https://i.pravatar.cc/150?img=15",
+        "isOnline": false
+      },
+      "product": {
+        "id": "prod7",
+        "title": "50 x YODEL lunch bags",
+        "price": 25,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop",
+        "status": "available"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user7",
+          "text": "Is this still available?",
+          "timestamp": "2025-11-17T11:00:00Z",
+          "status": "read"
+        },
+        {
+          "id": "m2",
+          "senderId": "me",
+          "text": "Hi y...",
+          "timestamp": "2025-11-17T11:30:00Z",
+          "status": "read"
+        }
+      ],
+      "lastMessage": {
+        "text": "Hi y...",
+        "timestamp": "2025-11-17T11:30:00Z",
+        "isFromMe": true,
+        "status": "read"
+      },
+      "unreadCount": 0,
+      "isTyping": false
+    },
+    {
+      "id": "8",
+      "participant": {
+        "id": "user8",
+        "name": "Ronny",
+        "avatar": "https://i.pravatar.cc/150?img=22",
+        "isOnline": false
+      },
+      "product": {
+        "id": "prod8",
+        "title": "50 x YODEL lunch bags",
+        "price": 25,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=200&fit=crop",
+        "status": "available"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user8",
+          "text": "Is this still available?",
+          "timestamp": "2025-11-10T14:00:00Z",
+          "status": "read"
+        },
+        {
+          "id": "m2",
+          "senderId": "user8",
+          "text": "Ho...",
+          "timestamp": "2025-11-10T14:30:00Z",
+          "status": "read"
+        }
+      ],
+      "lastMessage": {
+        "text": "Ho...",
+        "timestamp": "2025-11-10T14:30:00Z",
+        "isFromMe": false,
+        "status": "read"
+      },
+      "unreadCount": 0,
+      "isTyping": false
+    }
+  ]
+}

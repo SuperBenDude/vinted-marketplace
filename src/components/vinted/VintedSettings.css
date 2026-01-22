@@ -1,0 +1,403 @@
+.vinted-settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+}
+
+.vinted-settings-modal {
+  background: #1a1a1a;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 480px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid #2c3030;
+}
+
+.vinted-settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #2c3030;
+  position: sticky;
+  top: 0;
+  background: #1a1a1a;
+  z-index: 1;
+}
+
+.vinted-settings-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.vinted-settings-close {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #808788;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.vinted-settings-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.vinted-settings-content {
+  padding: 16px 20px;
+}
+
+.vinted-settings-section {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #2c3030;
+}
+
+.vinted-settings-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 16px;
+  padding-bottom: 0;
+}
+
+.vinted-settings-section h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #17a5ad;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 16px 0;
+}
+
+.vinted-settings-field {
+  margin-bottom: 16px;
+}
+
+.vinted-settings-field:last-child {
+  margin-bottom: 0;
+}
+
+.vinted-settings-field label {
+  display: block;
+  font-size: 13px;
+  color: #d0d4d5;
+  margin-bottom: 8px;
+}
+
+.vinted-settings-field input[type="text"],
+.vinted-settings-field input[type="number"],
+.vinted-settings-field select,
+.vinted-settings-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background: #101212;
+  border: 1px solid #2c3030;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.vinted-settings-field input:focus,
+.vinted-settings-field select:focus,
+.vinted-settings-field textarea:focus {
+  outline: none;
+  border-color: #17a5ad;
+}
+
+.vinted-settings-field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.vinted-settings-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.vinted-settings-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #17a5ad;
+  cursor: pointer;
+}
+
+.vinted-settings-checkbox label {
+  font-size: 14px;
+  color: #d0d4d5;
+  cursor: pointer;
+}
+
+.vinted-settings-row {
+  display: flex;
+  gap: 12px;
+}
+
+.vinted-settings-row .vinted-settings-field {
+  flex: 1;
+}
+
+.vinted-settings-field input[type="range"] {
+  width: 100%;
+  height: 6px;
+  background: #2c3030;
+  border-radius: 3px;
+  appearance: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.vinted-settings-field input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #17a5ad;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.vinted-settings-field input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #17a5ad;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.vinted-image-upload {
+  margin-top: 8px;
+}
+
+.vinted-upload-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #101212;
+  border: 1px dashed #3d4a4d;
+  border-radius: 8px;
+  color: #808788;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.vinted-upload-btn:hover {
+  border-color: #17a5ad;
+  color: #17a5ad;
+}
+
+.vinted-image-preview {
+  position: relative;
+  display: inline-block;
+}
+
+.vinted-image-preview img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #2c3030;
+}
+
+.vinted-image-preview button {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #dc3545;
+  border: none;
+  color: #fff;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.vinted-settings-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.vinted-btn-primary,
+.vinted-btn-secondary {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vinted-btn-primary {
+  background: #17a5ad;
+  border: none;
+  color: #07141c;
+}
+
+.vinted-btn-primary:hover {
+  background: #1ab8c1;
+}
+
+.vinted-btn-secondary {
+  background: transparent;
+  border: 1px solid #3d4a4d;
+  color: #808788;
+}
+
+.vinted-btn-secondary:hover {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.vinted-settings-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #2c3030;
+  text-align: center;
+}
+
+.vinted-settings-footer p {
+  margin: 0;
+  font-size: 12px;
+  color: #808788;
+}
+
+/* Image Cropper */
+.vinted-cropper-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+}
+
+.vinted-cropper-modal {
+  background: #1a1a1a;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow: hidden;
+  border: 1px solid #2c3030;
+}
+
+.vinted-cropper-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #2c3030;
+}
+
+.vinted-cropper-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.vinted-cropper-content {
+  padding: 20px;
+}
+
+.vinted-cropper-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;
+  margin-bottom: 16px;
+}
+
+.vinted-cropper-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: calc(var(--crop-x, 50%)) calc(var(--crop-y, 50%));
+}
+
+.vinted-crop-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #17a5ad;
+  pointer-events: none;
+}
+
+.vinted-cropper-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vinted-crop-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vinted-crop-slider label {
+  font-size: 12px;
+  color: #808788;
+}
+
+.vinted-crop-slider input[type="range"] {
+  width: 100%;
+  height: 6px;
+  background: #2c3030;
+  border-radius: 3px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.vinted-crop-slider input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #17a5ad;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.vinted-crop-slider input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #17a5ad;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.vinted-cropper-actions {
+  display: flex;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid #2c3030;
+}

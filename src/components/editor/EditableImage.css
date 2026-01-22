@@ -1,0 +1,176 @@
+.editable-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.editable-image-wrapper.edit-mode {
+  cursor: pointer;
+}
+
+.editable-image-wrapper.edit-mode:hover .edit-image-overlay {
+  opacity: 1;
+}
+
+.editable-image-wrapper.edit-mode:hover {
+  outline: 2px dashed rgba(8, 102, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.editable-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edit-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(8, 102, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: white;
+  border-radius: inherit;
+}
+
+/* Modal Styles */
+.image-edit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+}
+
+.image-edit-modal {
+  background: #1a1a2e;
+  border-radius: 16px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  color: #fff;
+}
+
+.image-edit-modal h3 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.image-preview {
+  width: 100%;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.image-edit-options {
+  margin-bottom: 20px;
+}
+
+.option-section {
+  margin-bottom: 16px;
+}
+
+.option-section label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.option-section input[type="text"],
+.option-section input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.option-section input[type="text"]:focus {
+  outline: none;
+  border-color: #0866ff;
+}
+
+.option-section input[type="file"] {
+  cursor: pointer;
+}
+
+.option-section input[type="file"]::file-selector-button {
+  padding: 8px 16px;
+  background: #0866ff;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.option-divider {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  margin: 16px 0;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.cancel-btn,
+.save-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.save-btn {
+  background: #0866ff;
+  border: none;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background: #0755d4;
+}

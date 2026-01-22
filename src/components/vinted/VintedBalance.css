@@ -1,0 +1,282 @@
+.vinted-balance {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #0d0d0d;
+  color: #ffffff;
+}
+
+.vinted-balance-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #1a1a1a;
+}
+
+.vinted-balance-header h1 {
+  flex: 1;
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.vinted-back-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.vinted-header-spacer {
+  width: 40px;
+}
+
+/* Edit Banner */
+.vinted-edit-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #09B1BA 0%, #07838a 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Balance Content */
+.vinted-balance-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+/* Balance Card */
+.vinted-balance-card {
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.vinted-balance-amount {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.vinted-currency {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-right: 4px;
+}
+
+.vinted-balance-value {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.vinted-balance-label {
+  font-size: 14px;
+  color: #7a7a7a;
+  margin-bottom: 16px;
+}
+
+.vinted-pending-balance {
+  font-size: 13px;
+  color: #a0a0a0;
+  margin-bottom: 16px;
+}
+
+.vinted-transfer-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #09B1BA;
+  border: none;
+  border-radius: 8px;
+  color: #0d0d0d;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vinted-transfer-btn:hover {
+  background-color: #07a0a8;
+}
+
+/* Start Balance */
+.vinted-start-balance {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.vinted-start-balance-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #a0a0a0;
+}
+
+/* Transaction History */
+.vinted-history {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.vinted-history h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #ffffff;
+}
+
+.vinted-transaction {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.vinted-transaction:last-child {
+  border-bottom: none;
+}
+
+.vinted-transaction-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a0a0a0;
+  flex-shrink: 0;
+}
+
+.vinted-transaction-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.vinted-transaction-desc {
+  font-size: 14px;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vinted-account {
+  color: #7a7a7a;
+}
+
+.vinted-transaction-date {
+  font-size: 12px;
+  color: #7a7a7a;
+  margin-top: 2px;
+}
+
+.vinted-transaction-amount {
+  font-size: 15px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.vinted-transaction-amount.positive {
+  color: #22c55e;
+}
+
+.vinted-transaction-amount.negative {
+  color: #ef4444;
+}
+
+/* Empty State */
+.vinted-empty-history {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.vinted-empty-icon {
+  color: #3a3a3a;
+  margin-bottom: 16px;
+}
+
+.vinted-empty-history p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.vinted-empty-history span {
+  font-size: 14px;
+  color: #7a7a7a;
+}
+
+/* Bottom Navigation */
+.vinted-bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 0;
+  padding-bottom: 20px;
+  background-color: #181c1c;
+  border-top: 1px solid #2a2a2a;
+}
+
+.vinted-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  color: #939a9b;
+  font-size: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+}
+
+.vinted-nav-item.active {
+  color: #17a5ad;
+}
+
+.vinted-nav-item .nav-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vinted-nav-item svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.5;
+}
+
+.vinted-nav-badge {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  width: 9px;
+  height: 9px;
+  background-color: #e53935;
+  border-radius: 50%;
+}

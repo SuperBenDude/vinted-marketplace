@@ -1,0 +1,44 @@
+.editable-field {
+  cursor: inherit;
+  transition: all 0.15s ease;
+}
+
+.editable-field.edit-mode {
+  cursor: pointer;
+  position: relative;
+}
+
+.editable-field.edit-mode:hover {
+  background: rgba(8, 102, 255, 0.15);
+  outline: 2px dashed rgba(8, 102, 255, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.editable-input {
+  background: rgba(8, 102, 255, 0.1);
+  border: 2px solid #0866ff;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.editable-input:focus {
+  background: rgba(8, 102, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(8, 102, 255, 0.2);
+}
+
+.editable-input.multiline {
+  min-height: 60px;
+  resize: vertical;
+}
+
+/* Number input specific styles */
+.editable-input[type="number"] {
+  width: auto;
+  min-width: 80px;
+}

@@ -1,0 +1,377 @@
+{
+  "currentUser": {
+    "id": "me",
+    "name": "You",
+    "avatar": "https://i.pravatar.cc/150?img=68"
+  },
+  "conversations": [
+    {
+      "id": "v1",
+      "participant": {
+        "id": "user1",
+        "name": "flowerfionaa",
+        "avatar": null,
+        "location": "United Kingdom",
+        "lastSeen": "2 hours ago"
+      },
+      "product": {
+        "id": "prod1",
+        "title": "Nike Zoom Vapour Cage 4",
+        "price": 85.00,
+        "originalPrice": 150.00,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&h=200&fit=crop",
+        "subtotal": 89.95,
+        "status": "available"
+      },
+      "offer": {
+        "amount": 25.00,
+        "originalPrice": 85.00,
+        "status": "pending"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user1",
+          "text": "Hi! Would you sell this for £25.00?",
+          "timestamp": "2026-01-10T14:30:00Z",
+          "type": "offer"
+        }
+      ],
+      "lastMessage": {
+        "text": "Hi! Would you sell this for £25.00?",
+        "timestamp": "2026-01-10T14:30:00Z",
+        "isFromMe": false
+      },
+      "unreadCount": 1,
+      "timeAgo": "a week ago"
+    },
+    {
+      "id": "v2",
+      "participant": {
+        "id": "user2",
+        "name": "pkny247",
+        "avatar": null,
+        "location": "United Kingdom, Ilford",
+        "lastSeen": "9 hours ago"
+      },
+      "product": {
+        "id": "prod2",
+        "title": "Nike Zoom Vapour Cage 4",
+        "price": 85.00,
+        "originalPrice": 150.00,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&h=200&fit=crop",
+        "subtotal": 89.95,
+        "status": "available"
+      },
+      "offer": {
+        "amount": 60.00,
+        "originalPrice": 85.00,
+        "status": "pending"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user2",
+          "text": "Hi! Would you sell this for £60.00?",
+          "timestamp": "2026-01-10T10:00:00Z",
+          "type": "offer"
+        }
+      ],
+      "lastMessage": {
+        "text": "Hi! Would you sell this for £60.00?",
+        "timestamp": "2026-01-10T10:00:00Z",
+        "isFromMe": false
+      },
+      "unreadCount": 0,
+      "timeAgo": "a week ago"
+    },
+    {
+      "id": "v3",
+      "participant": {
+        "id": "user3",
+        "name": "illuminatorscience",
+        "avatar": null,
+        "location": "United Kingdom",
+        "lastSeen": "1 day ago"
+      },
+      "product": {
+        "id": "prod3",
+        "title": "Vintage Denim Jacket",
+        "price": 60.00,
+        "originalPrice": null,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=200&h=200&fit=crop",
+        "subtotal": 64.95,
+        "status": "available"
+      },
+      "offer": {
+        "amount": 60.00,
+        "originalPrice": 60.00,
+        "status": "pending"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user3",
+          "text": "Hi! Would you sell this for £60.00?",
+          "timestamp": "2025-12-20T15:00:00Z",
+          "type": "offer"
+        }
+      ],
+      "lastMessage": {
+        "text": "Hi! Would you sell this for £60.00?",
+        "timestamp": "2025-12-20T15:00:00Z",
+        "isFromMe": false
+      },
+      "unreadCount": 0,
+      "timeAgo": "4 weeks ago"
+    },
+    {
+      "id": "v4",
+      "participant": {
+        "id": "user4",
+        "name": "cheltboy",
+        "avatar": null,
+        "location": "United Kingdom",
+        "lastSeen": "3 hours ago"
+      },
+      "product": {
+        "id": "prod4",
+        "title": "Mizuno Morelia II Men's Football Soccer Sh...",
+        "price": 100.00,
+        "originalPrice": 150.00,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=200&h=200&fit=crop",
+        "subtotal": 105.00,
+        "status": "sold"
+      },
+      "offer": {
+        "amount": 100.00,
+        "originalPrice": 150.00,
+        "status": "accepted"
+      },
+      "transaction": {
+        "status": "complete",
+        "soldDate": "2025-08-02T10:00:00Z",
+        "sendBefore": "11 Aug 10:00",
+        "shippedDate": "2025-08-05T00:00:00Z",
+        "deliveredDate": "2025-08-09T00:00:00Z",
+        "amount": 100.00
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user4",
+          "text": "Is this still available?",
+          "timestamp": "2025-08-01T14:30:00Z",
+          "type": "text"
+        },
+        {
+          "id": "m2",
+          "senderId": "me",
+          "text": "Yes it is!",
+          "timestamp": "2025-08-01T14:45:00Z",
+          "type": "text"
+        }
+      ],
+      "lastMessage": {
+        "text": "Mizuno Morelia II Men's Football Soccer Sh...",
+        "timestamp": "2025-08-01T14:30:00Z",
+        "isFromMe": false
+      },
+      "unreadCount": 0,
+      "timeAgo": "5 months ago"
+    },
+    {
+      "id": "v5",
+      "participant": {
+        "id": "user5",
+        "name": "john.be",
+        "avatar": null,
+        "avatarColor": "#17a5ad",
+        "location": "Belgium",
+        "lastSeen": "2 days ago"
+      },
+      "product": {
+        "id": "prod5",
+        "title": "Mizuno Morelia II Men's Football Soccer Sh...",
+        "price": 85.00,
+        "originalPrice": null,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=200&h=200&fit=crop",
+        "subtotal": 89.95,
+        "status": "available"
+      },
+      "offer": null,
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user5",
+          "text": "Is this available?",
+          "timestamp": "2025-06-15T09:00:00Z",
+          "type": "text"
+        }
+      ],
+      "lastMessage": {
+        "text": "Mizuno Morelia II Men's Football Soccer Sh...",
+        "timestamp": "2025-06-15T09:00:00Z",
+        "isFromMe": false
+      },
+      "unreadCount": 0,
+      "timeAgo": "7 months ago"
+    },
+    {
+      "id": "v6",
+      "participant": {
+        "id": "user6",
+        "name": "essi212",
+        "avatar": null,
+        "avatarColor": "#17a5ad",
+        "location": "United Kingdom",
+        "lastSeen": "1 week ago"
+      },
+      "product": {
+        "id": "prod6",
+        "title": "Adidas Running Shoes",
+        "price": 24.00,
+        "originalPrice": null,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=200&h=200&fit=crop",
+        "subtotal": 28.95,
+        "status": "available"
+      },
+      "offer": {
+        "amount": 24.00,
+        "originalPrice": 24.00,
+        "status": "pending"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user6",
+          "text": "Hi! Would you sell this for £24.00?",
+          "timestamp": "2025-04-15T11:00:00Z",
+          "type": "offer"
+        }
+      ],
+      "lastMessage": {
+        "text": "Hi! Would you sell this for £24.00?",
+        "timestamp": "2025-04-15T11:00:00Z",
+        "isFromMe": false
+      },
+      "unreadCount": 0,
+      "timeAgo": "9 months ago"
+    },
+    {
+      "id": "v7",
+      "participant": {
+        "id": "user7",
+        "name": "roundo2000",
+        "avatar": null,
+        "avatarColor": null,
+        "location": "United Kingdom",
+        "lastSeen": "1 month ago"
+      },
+      "product": {
+        "id": "prod7",
+        "title": "Vintage Watch",
+        "price": 45.00,
+        "originalPrice": null,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=200&h=200&fit=crop",
+        "subtotal": 49.95,
+        "status": "sold"
+      },
+      "offer": {
+        "amount": 45.00,
+        "originalPrice": 45.00,
+        "status": "accepted"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "me",
+          "text": "You accepted roundo2000's offer!",
+          "timestamp": "2025-01-10T16:00:00Z",
+          "type": "system"
+        }
+      ],
+      "lastMessage": {
+        "text": "You accepted roundo2000's offer!",
+        "timestamp": "2025-01-10T16:00:00Z",
+        "isFromMe": true
+      },
+      "unreadCount": 0,
+      "timeAgo": "a year ago"
+    },
+    {
+      "id": "v8",
+      "participant": {
+        "id": "user8",
+        "name": "timberbubble",
+        "avatar": null,
+        "location": "United Kingdom",
+        "lastSeen": "2 months ago"
+      },
+      "product": {
+        "id": "prod8",
+        "title": "Leather Wallet",
+        "price": 20.00,
+        "originalPrice": null,
+        "currency": "GBP",
+        "image": "https://images.unsplash.com/photo-1627123424574-724758594e93?w=200&h=200&fit=crop",
+        "subtotal": 24.95,
+        "status": "available"
+      },
+      "offer": {
+        "amount": 20.00,
+        "originalPrice": 20.00,
+        "status": "pending"
+      },
+      "messages": [
+        {
+          "id": "m1",
+          "senderId": "user8",
+          "text": "Hi! Would you sell this for £20.00?",
+          "timestamp": "2025-01-05T14:00:00Z",
+          "type": "offer"
+        }
+      ],
+      "lastMessage": {
+        "text": "Hi! Would you sell this for £20.00?",
+        "timestamp": "2025-01-05T14:00:00Z",
+        "isFromMe": false
+      },
+      "unreadCount": 0,
+      "timeAgo": "a year ago"
+    }
+  ],
+  "balance": {
+    "available": 0.00,
+    "pending": 0.00,
+    "currency": "GBP",
+    "startBalance": {
+      "date": "2026-01-01",
+      "amount": 0.00
+    },
+    "history": [
+      {
+        "id": "t1",
+        "type": "withdrawal",
+        "description": "Withdrawal to bank account",
+        "account": "****0568",
+        "amount": -195.00,
+        "date": "2024-03-17"
+      },
+      {
+        "id": "t2",
+        "type": "sold",
+        "description": "Nike Zoom Mercurial Vapor 15 Elite FG Low Bonded Pack",
+        "amount": 120.00,
+        "date": "2024-03-15"
+      }
+    ]
+  }
+}
