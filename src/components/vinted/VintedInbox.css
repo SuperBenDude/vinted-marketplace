@@ -5,20 +5,21 @@
   background-color: #181c1c;
   color: #ffffff;
   font-family: 'Inter', 'Helvetica Neue', 'Helvetica-Neue', Arial, sans-serif;
+  overflow: hidden;
   padding-top: env(safe-area-inset-top);
 }
 
 .vinted-inbox-header {
-  padding: 14px 16px 10px;
+  padding: 0 16px 4px;
   text-align: center;
   background-color: #181c1c;
 }
 
 .vinted-inbox-header h1 {
   margin: 0;
-  font-size: 16px;
-  font-weight: 400;
-  color: #c8d0d1;
+  font-size: 17px;
+  font-weight: 500;
+  color: #e8f0f1;
   letter-spacing: 0.2px;
 }
 
@@ -32,7 +33,7 @@
 
 .vinted-tab {
   flex: 1;
-  padding: 10px 0;
+  padding: 6px 0;
   background: none;
   border: none;
   color: #5a6466;
@@ -80,7 +81,10 @@
 .vinted-conversation-list {
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   background-color: #181c1c;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .vinted-conversation-item {
@@ -89,12 +93,22 @@
   padding: 12px 16px;
   cursor: pointer;
   transition: background-color 0.2s;
+  border: none;
   border-bottom: 1px solid #232a2b;
   background-color: #181c1c;
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .vinted-conversation-item:active {
   background-color: #232929;
+}
+
+.vinted-conversation-item:focus {
+  outline: none;
+  border-left: none;
+  box-shadow: none;
 }
 
 .vinted-conversation-item.unread {
@@ -177,48 +191,48 @@
 }
 
 .vinted-username {
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
   color: #ffffff;
 }
 
 .vinted-time {
-  font-size: 14px;
-  color: #93a0a2;
+  font-size: 12px;
+  color: #6a7879;
   flex-shrink: 0;
   margin-left: 8px;
-  font-weight: 375;
+  font-weight: 400;
 }
 
 .vinted-conversation-preview {
-  font-size: 16px;
-  color: #9fa8a9;
+  font-size: 15px;
+  color: #7a8485;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 10px;
-  font-weight: 375;
-  line-height: 1.4;
+  margin-bottom: 4px;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 .vinted-product-thumb {
-  width: 32px;
-  height: 32px;
-  margin-top: 2px;
+  width: 28px;
+  height: 28px;
+  margin-top: 0;
 }
 
 .vinted-product-image {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
   object-fit: cover;
 }
 
 .vinted-product-image img,
 .vinted-product-image .editable-image {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
   object-fit: cover;
 }
 
@@ -256,8 +270,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: 0;
+  gap: 6px;
+  padding: 8px 0;
   margin: 0;
   background: none;
   border: none;
@@ -267,7 +281,7 @@
   font-weight: 400;
   cursor: pointer;
   position: relative;
-  min-width: 56px;
+  min-width: 64px;
 }
 
 .vinted-nav-item.active {
@@ -283,8 +297,8 @@
 }
 
 .vinted-nav-item svg {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   stroke-width: 1.5;
 }
 

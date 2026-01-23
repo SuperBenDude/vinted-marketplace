@@ -1,22 +1,24 @@
 {
-  "name": "Marketplace Messenger",
-  "short_name": "Marketplace",
-  "description": "Marketplace and Vinted Messenger",
-  "start_url": "/",
+  "name": "Vinted",
+  "short_name": "Vinted",
+  "description": "Vinted Marketplace",
+  "start_url": "/vinted?v=9",
   "display": "standalone",
-  "background_color": "#18191a",
-  "theme_color": "#0866ff",
+  "background_color": "#181c1c",
+  "theme_color": "#181c1c",
   "orientation": "portrait",
   "icons": [
     {
       "src": "/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
