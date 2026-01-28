@@ -185,9 +185,9 @@ export default function VintedInbox({ conversations }) {
         </button>
         <button className="vinted-nav-item active">
           <div className="nav-icon-wrapper">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <rect x="3" y="5" width="18" height="14" rx="2" />
-              <path d="M3 7l9 6 9-6" />
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <path d="M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
+              <path d="M3 7l9 6 9-6" fill="none" stroke="#181c1c" strokeWidth="1.5" />
             </svg>
             {unreadCount > 0 && (
               <div className="vinted-nav-badge">{unreadCount > 9 ? '9+' : unreadCount}</div>
