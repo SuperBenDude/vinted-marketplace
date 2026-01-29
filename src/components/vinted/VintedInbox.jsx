@@ -190,7 +190,7 @@ export default function VintedInbox({ conversations }) {
               <path d="M3 7l9 6 9-6" fill="none" stroke="#181c1c" strokeWidth="1.5" />
             </svg>
             {unreadCount > 0 && (
-              <div className="vinted-nav-badge">{unreadCount > 9 ? '9+' : unreadCount}</div>
+              <div className="vinted-nav-badge"></div>
             )}
           </div>
           <span>Inbox</span>

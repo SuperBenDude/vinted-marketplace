@@ -101,9 +101,17 @@ function App() {
   const [conversations, setConversations] = useState(conversationsData.conversations);
   const [currentUser, setCurrentUser] = useState(conversationsData.currentUser);
 
-  // Vinted state
-  const [vintedConversations, setVintedConversations] = useState(vintedConversationsData.conversations);
+  // Vinted state - load from localStorage if available
+  const [vintedConversations, setVintedConversations] = useState(() => {
+    const saved = localStorage.getItem('vinted-conversations');
+    return saved ? JSON.parse(saved) : vintedConversationsData.conversations;
+  });
   const [vintedBalance, setVintedBalance] = useState(vintedConversationsData.balance);
+
+  // Save Vinted conversations to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('vinted-conversations', JSON.stringify(vintedConversations));
+  }, [vintedConversations]);
 
   // Hot reload for JSON changes in development
   useEffect(() => {
