@@ -304,10 +304,10 @@
 
 .vinted-nav-badge {
   position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 8px;
-  height: 8px;
+  top: 3px;
+  right: 6px;
+  width: 9px;
+  height: 9px;
   background-color: #09b1ba;
   border-radius: 50%;
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { EditorProvider, useEditor } from './context/EditorContext';
 import { EditorMenu } from './components/editor';
@@ -8,6 +8,8 @@ import AppMenu from './components/AppMenu';
 import { VintedInbox, VintedConversation, VintedBalance } from './components/vinted';
 import conversationsData from './data/conversations.json';
 import vintedConversationsData from './data/vinted-conversations.json';
+import { db } from './firebase';
+import { doc, getDoc, setDoc, onSnapshot } from 'firebase/firestore';
 import './App.css';
 
 function AppContent({
@@ -101,17 +103,39 @@ function App() {
   const [conversations, setConversations] = useState(conversationsData.conversations);
   const [currentUser, setCurrentUser] = useState(conversationsData.currentUser);
 
-  // Vinted state - load from localStorage if available
-  const [vintedConversations, setVintedConversations] = useState(() => {
-    const saved = localStorage.getItem('vinted-conversations');
-    return saved ? JSON.parse(saved) : vintedConversationsData.conversations;
-  });
+  // Vinted state - will be loaded from Firebase
+  const [vintedConversations, setVintedConversations] = useState(vintedConversationsData.conversations);
   const [vintedBalance, setVintedBalance] = useState(vintedConversationsData.balance);
+  const [isLoading, setIsLoading] = useState(true);
+  const isLocalUpdate = useRef(false);
 
-  // Save Vinted conversations to localStorage whenever they change
+  // Load from Firebase and subscribe to real-time updates
   useEffect(() => {
-    localStorage.setItem('vinted-conversations', JSON.stringify(vintedConversations));
-  }, [vintedConversations]);
+    const docRef = doc(db, 'vinted', 'conversations');
+
+    // Subscribe to real-time updates
+    const unsubscribe = onSnapshot(docRef, (docSnap) => {
+      if (docSnap.exists() && !isLocalUpdate.current) {
+        setVintedConversations(docSnap.data().conversations || []);
+      }
+      setIsLoading(false);
+      isLocalUpdate.current = false;
+    }, (error) => {
+      console.error('Firebase error:', error);
+      setIsLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  // Save to Firebase whenever conversations change (after initial load)
+  useEffect(() => {
+    if (!isLoading) {
+      isLocalUpdate.current = true;
+      const docRef = doc(db, 'vinted', 'conversations');
+      setDoc(docRef, { conversations: vintedConversations }).catch(console.error);
+    }
+  }, [vintedConversations, isLoading]);
 
   // Hot reload for JSON changes in development
   useEffect(() => {
