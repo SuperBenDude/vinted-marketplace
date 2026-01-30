@@ -103,48 +103,52 @@ function App() {
   const [conversations, setConversations] = useState(conversationsData.conversations);
   const [currentUser, setCurrentUser] = useState(conversationsData.currentUser);
 
-  // Vinted state - will be loaded from Firebase
-  const [vintedConversations, setVintedConversations] = useState(vintedConversationsData.conversations);
+  // Vinted state - start empty, load from Firebase
+  const [vintedConversations, setVintedConversations] = useState([]);
   const [vintedBalance, setVintedBalance] = useState(vintedConversationsData.balance);
   const [isLoading, setIsLoading] = useState(true);
-  const hasLoadedFromFirebase = useRef(false);
-  const pendingSaves = useRef(0);
+  const skipNextSave = useRef(true); // Skip the first save after load
 
   // Load from Firebase ONLY on initial load
   useEffect(() => {
     const docRef = doc(db, 'vinted', 'conversations');
 
-    // Get initial data once
     getDoc(docRef).then((docSnap) => {
       if (docSnap.exists()) {
         const data = docSnap.data().conversations || [];
         console.log('Initial load from Firebase:', data.length, 'conversations');
         setVintedConversations(data);
+      } else {
+        // No data in Firebase, use defaults
+        console.log('No Firebase data, using defaults');
+        setVintedConversations(vintedConversationsData.conversations);
       }
-      hasLoadedFromFirebase.current = true;
+      // Skip the save that will be triggered by this load
+      skipNextSave.current = true;
       setIsLoading(false);
     }).catch((error) => {
       console.error('Firebase initial load error:', error);
-      hasLoadedFromFirebase.current = true;
+      setVintedConversations(vintedConversationsData.conversations);
+      skipNextSave.current = true;
       setIsLoading(false);
     });
   }, []);
 
   // Save to Firebase whenever conversations change (after initial load)
   useEffect(() => {
-    if (!isLoading && hasLoadedFromFirebase.current) {
-      pendingSaves.current++;
-      const docRef = doc(db, 'vinted', 'conversations');
-      setDoc(docRef, { conversations: vintedConversations })
-        .then(() => {
-          console.log('Saved to Firebase:', vintedConversations.length, 'conversations');
-          pendingSaves.current--;
-        })
-        .catch((err) => {
-          console.error('Firebase save error:', err);
-          pendingSaves.current--;
-        });
+    if (isLoading) return;
+
+    if (skipNextSave.current) {
+      skipNextSave.current = false;
+      console.log('Skipping initial save after load');
+      return;
     }
+
+    const docRef = doc(db, 'vinted', 'conversations');
+    console.log('Saving to Firebase:', vintedConversations.length, 'conversations');
+    setDoc(docRef, { conversations: vintedConversations })
+      .then(() => console.log('Save complete'))
+      .catch((err) => console.error('Firebase save error:', err));
   }, [vintedConversations, isLoading]);
 
   // Hot reload for JSON changes in development
