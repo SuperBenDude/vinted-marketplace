@@ -71,7 +71,7 @@ function AppContent({
             {/* Vinted Routes */}
             <Route
               path="/vinted"
-              element={<VintedInbox conversations={vintedConversations} />}
+              element={<VintedInbox conversations={vintedConversations} setConversations={setVintedConversations} />}
             />
             <Route
               path="/vinted/conversation/:id"

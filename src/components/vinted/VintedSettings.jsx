@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import { useEditor } from '../../context/EditorContext';
 import './VintedSettings.css';
 
 // Random username generator - creates realistic usernames like you'd see on Vinted
@@ -130,8 +129,8 @@ const generateRandomAvatar = (username) => {
   }
 };
 
-export default function VintedSettings({ isOpen, onClose }) {
-  const { setConversations, conversations } = useEditor();
+export default function VintedSettings({ isOpen, onClose, conversations, setConversations }) {
+  // Use props directly instead of EditorContext to avoid stale closure issues
   const [numChats, setNumChats] = useState(5);
   const [defaultReadStatus, setDefaultReadStatus] = useState('unread');
   const [randomizeNames, setRandomizeNames] = useState(true);

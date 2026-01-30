@@ -25,7 +25,7 @@ function formatTimeAgo(timestamp) {
   return `${diffYears} year${diffYears > 1 ? 's' : ''} ago`;
 }
 
-export default function VintedInbox({ conversations }) {
+export default function VintedInbox({ conversations, setConversations }) {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('messages');
   const [showSettings, setShowSettings] = useState(false);
@@ -209,6 +209,8 @@ export default function VintedInbox({ conversations }) {
       <VintedSettings
         isOpen={showSettings}
         onClose={() => setShowSettings(false)}
+        conversations={conversations}
+        setConversations={setConversations}
       />
     </div>
   );
