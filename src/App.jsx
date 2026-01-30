@@ -107,7 +107,7 @@ function App() {
   const [vintedConversations, setVintedConversations] = useState([]);
   const [vintedBalance, setVintedBalance] = useState(vintedConversationsData.balance);
   const [isLoading, setIsLoading] = useState(true);
-  const skipNextSave = useRef(true); // Skip the first save after load
+  const hasInitialized = useRef(false);
 
   // Load from Firebase ONLY on initial load
   useEffect(() => {
@@ -119,28 +119,29 @@ function App() {
         console.log('Initial load from Firebase:', data.length, 'conversations');
         setVintedConversations(data);
       } else {
-        // No data in Firebase, use defaults
         console.log('No Firebase data, using defaults');
         setVintedConversations(vintedConversationsData.conversations);
       }
-      // Skip the save that will be triggered by this load
-      skipNextSave.current = true;
       setIsLoading(false);
+      // Delay initialization flag to prevent save effect from firing on load
+      setTimeout(() => {
+        hasInitialized.current = true;
+        console.log('Firebase initialized, saves now enabled');
+      }, 200);
     }).catch((error) => {
       console.error('Firebase initial load error:', error);
       setVintedConversations(vintedConversationsData.conversations);
-      skipNextSave.current = true;
       setIsLoading(false);
+      setTimeout(() => {
+        hasInitialized.current = true;
+      }, 200);
     });
   }, []);
 
-  // Save to Firebase whenever conversations change (after initial load)
+  // Save to Firebase whenever conversations change (after initialization)
   useEffect(() => {
-    if (isLoading) return;
-
-    if (skipNextSave.current) {
-      skipNextSave.current = false;
-      console.log('Skipping initial save after load');
+    if (isLoading || !hasInitialized.current) {
+      console.log('Save skipped - isLoading:', isLoading, 'hasInitialized:', hasInitialized.current);
       return;
     }
 
@@ -151,7 +152,7 @@ function App() {
       .catch((err) => console.error('Firebase save error:', err));
   }, [vintedConversations, isLoading]);
 
-  // Hot reload for JSON changes in development
+  // Hot reload for JSON changes in development (marketplace only, not vinted)
   useEffect(() => {
     if (import.meta.hot) {
       import.meta.hot.accept('./data/conversations.json', (newModule) => {
@@ -159,12 +160,7 @@ function App() {
           setConversations(newModule.default.conversations);
         }
       });
-      import.meta.hot.accept('./data/vinted-conversations.json', (newModule) => {
-        if (newModule) {
-          setVintedConversations(newModule.default.conversations);
-          setVintedBalance(newModule.default.balance);
-        }
-      });
+      // NOTE: Removed vinted-conversations.json hot reload to prevent overwriting Firebase data
     }
   }, []);
 
