@@ -17,8 +17,10 @@
   border-radius: 12px;
   width: 90%;
   max-width: 480px;
-  max-height: 85vh;
+  max-height: 85dvh;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   border: 1px solid #2c3030;
 }
@@ -304,7 +306,7 @@
   border-radius: 12px;
   width: 90%;
   max-width: 400px;
-  max-height: 90vh;
+  max-height: 90dvh;
   overflow: hidden;
   border: 1px solid #2c3030;
 }
