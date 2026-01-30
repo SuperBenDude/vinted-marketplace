@@ -122,7 +122,7 @@ function App() {
         setVintedConversations(data);
       }
       setIsLoading(false);
-      isLocalUpdate.current = false;
+      // Don't reset isLocalUpdate here - it's reset after save completes
     }, (error) => {
       console.error('Firebase error:', error);
       setIsLoading(false);
@@ -137,8 +137,17 @@ function App() {
       isLocalUpdate.current = true;
       const docRef = doc(db, 'vinted', 'conversations');
       setDoc(docRef, { conversations: vintedConversations })
-        .then(() => console.log('Saved to Firebase:', vintedConversations.length, 'conversations'))
-        .catch((err) => console.error('Firebase save error:', err));
+        .then(() => {
+          console.log('Saved to Firebase:', vintedConversations.length, 'conversations');
+          // Reset after a delay to let any triggered snapshots fire first
+          setTimeout(() => {
+            isLocalUpdate.current = false;
+          }, 500);
+        })
+        .catch((err) => {
+          console.error('Firebase save error:', err);
+          isLocalUpdate.current = false;
+        });
     }
   }, [vintedConversations, isLoading]);
 
