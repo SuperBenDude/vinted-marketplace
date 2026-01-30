@@ -10,15 +10,19 @@ export function useScrollLock(isLocked) {
     // Save original styles
     const originalBodyOverflow = body.style.overflow;
     const originalHtmlOverflow = html.style.overflow;
+    const originalBodyHeight = body.style.height;
 
-    // Simple overflow hidden approach (better for mobile)
+    // Apply scroll lock with height lock to prevent layout shift
     body.style.overflow = 'hidden';
     html.style.overflow = 'hidden';
+    body.style.height = '100%';
 
     // Prevent iOS rubber band scrolling
     const preventScroll = (e) => {
-      if (e.target.closest('.vinted-settings-modal')) {
-        return; // Allow scrolling inside modal
+      // Allow scrolling inside modals
+      if (e.target.closest('.vinted-settings-modal') ||
+          e.target.closest('.vinted-cropper-modal')) {
+        return;
       }
       e.preventDefault();
     };
@@ -29,7 +33,7 @@ export function useScrollLock(isLocked) {
     return () => {
       body.style.overflow = originalBodyOverflow;
       html.style.overflow = originalHtmlOverflow;
-
+      body.style.height = originalBodyHeight;
       document.removeEventListener('touchmove', preventScroll);
     };
   }, [isLocked]);

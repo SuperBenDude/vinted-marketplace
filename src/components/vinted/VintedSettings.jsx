@@ -213,6 +213,13 @@ export default function VintedSettings({ isOpen, onClose, conversations, setConv
       setProductImage(canvas.toDataURL('image/jpeg', 0.9));
       setShowCropper(false);
       setOriginalImage('');
+
+      // Prevent scroll jump when image appears
+      const modal = document.querySelector('.vinted-settings-modal');
+      const scrollTop = modal?.scrollTop || 0;
+      requestAnimationFrame(() => {
+        if (modal) modal.scrollTop = scrollTop;
+      });
     };
 
     img.src = originalImage;
