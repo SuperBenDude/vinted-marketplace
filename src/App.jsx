@@ -139,6 +139,7 @@ function App() {
   }, []);
 
   // Save to Firebase whenever conversations change (after initialization)
+  // Limit to 30 most recent conversations to stay under Firebase's 1MB document limit
   useEffect(() => {
     if (isLoading || !hasInitialized.current) {
       console.log('Save skipped - isLoading:', isLoading, 'hasInitialized:', hasInitialized.current);
@@ -146,8 +147,10 @@ function App() {
     }
 
     const docRef = doc(db, 'vinted', 'conversations');
-    console.log('Saving to Firebase:', vintedConversations.length, 'conversations');
-    setDoc(docRef, { conversations: vintedConversations })
+    // Only save the 30 most recent conversations to stay under 1MB limit
+    const toSave = vintedConversations.slice(0, 30);
+    console.log('Saving to Firebase:', toSave.length, 'of', vintedConversations.length, 'conversations');
+    setDoc(docRef, { conversations: toSave })
       .then(() => console.log('Save complete'))
       .catch((err) => console.error('Firebase save error:', err));
   }, [vintedConversations, isLoading]);
