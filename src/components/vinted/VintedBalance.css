@@ -273,10 +273,10 @@
 
 .vinted-nav-badge {
   position: absolute;
-  top: -2px;
-  right: -4px;
+  top: 2px;
+  right: -1px;
   width: 9px;
   height: 9px;
-  background-color: #e53935;
+  background-color: #09b1ba;
   border-radius: 50%;
 }
