@@ -4,31 +4,39 @@ export function useScrollLock(isLocked) {
   useEffect(() => {
     if (!isLocked) return;
 
-    // Save current scroll position
-    const scrollY = window.scrollY;
-    const scrollX = window.scrollX;
-
-    // Calculate scrollbar width
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-
-    // Lock body scroll
     const body = document.body;
-    body.style.position = 'fixed';
-    body.style.top = `-${scrollY}px`;
-    body.style.left = `-${scrollX}px`;
-    body.style.right = '0';
-    body.style.paddingRight = `${scrollbarWidth}px`;
+    const html = document.documentElement;
+
+    // Save original styles
+    const originalBodyOverflow = body.style.overflow;
+    const originalHtmlOverflow = html.style.overflow;
+    const originalBodyPosition = body.style.position;
+    const originalBodyWidth = body.style.width;
+
+    // Simple overflow hidden approach (better for mobile)
+    body.style.overflow = 'hidden';
+    html.style.overflow = 'hidden';
+    body.style.position = 'relative';
+    body.style.width = '100%';
+
+    // Prevent iOS rubber band scrolling
+    const preventScroll = (e) => {
+      if (e.target.closest('.vinted-settings-modal')) {
+        return; // Allow scrolling inside modal
+      }
+      e.preventDefault();
+    };
+
+    document.addEventListener('touchmove', preventScroll, { passive: false });
 
     // Cleanup function
     return () => {
-      body.style.position = '';
-      body.style.top = '';
-      body.style.left = '';
-      body.style.right = '';
-      body.style.paddingRight = '';
+      body.style.overflow = originalBodyOverflow;
+      html.style.overflow = originalHtmlOverflow;
+      body.style.position = originalBodyPosition;
+      body.style.width = originalBodyWidth;
 
-      // Restore scroll position
-      window.scrollTo(scrollX, scrollY);
+      document.removeEventListener('touchmove', preventScroll);
     };
   }, [isLocked]);
 }
