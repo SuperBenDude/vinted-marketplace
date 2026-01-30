@@ -69,3 +69,8 @@ body {
   background-color: #0084ff;
   color: #ffffff;
 }
+
+/* Prevent layout shifts from modals */
+.vinted-settings-modal {
+  contain: layout style paint;
+}

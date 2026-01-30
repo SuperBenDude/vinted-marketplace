@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { useScrollLock } from '../../hooks/useScrollLock';
 import './VintedSettings.css';
 
 // Random username generator - creates realistic usernames like you'd see on Vinted
@@ -152,6 +153,9 @@ export default function VintedSettings({ isOpen, onClose, conversations, setConv
   const [offerPriceMax, setOfferPriceMax] = useState('50');
   const fileInputRef = useRef(null);
   const cropperRef = useRef(null);
+
+  // Lock body scroll when modal is open
+  useScrollLock(isOpen);
 
   if (!isOpen) return null;
 
