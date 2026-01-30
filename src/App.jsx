@@ -115,8 +115,11 @@ function App() {
 
     // Subscribe to real-time updates
     const unsubscribe = onSnapshot(docRef, (docSnap) => {
+      console.log('Firebase snapshot:', docSnap.exists() ? 'exists' : 'empty', 'isLocalUpdate:', isLocalUpdate.current);
       if (docSnap.exists() && !isLocalUpdate.current) {
-        setVintedConversations(docSnap.data().conversations || []);
+        const data = docSnap.data().conversations || [];
+        console.log('Loading from Firebase:', data.length, 'conversations');
+        setVintedConversations(data);
       }
       setIsLoading(false);
       isLocalUpdate.current = false;
@@ -133,7 +136,9 @@ function App() {
     if (!isLoading) {
       isLocalUpdate.current = true;
       const docRef = doc(db, 'vinted', 'conversations');
-      setDoc(docRef, { conversations: vintedConversations }).catch(console.error);
+      setDoc(docRef, { conversations: vintedConversations })
+        .then(() => console.log('Saved to Firebase:', vintedConversations.length, 'conversations'))
+        .catch((err) => console.error('Firebase save error:', err));
     }
   }, [vintedConversations, isLoading]);
 
@@ -218,15 +223,13 @@ function App() {
   // Combined conversations for editor context (handles both apps)
   const allConversations = [...conversations, ...vintedConversations];
   const setAllConversations = (updater) => {
-    if (typeof updater === 'function') {
-      const result = updater(allConversations);
-      // Separate back into marketplace and vinted
-      const marketplaceIds = conversations.map(c => c.id);
-      const newMarketplace = result.filter(c => marketplaceIds.includes(c.id));
-      const newVinted = result.filter(c => !marketplaceIds.includes(c.id));
-      setConversations(newMarketplace);
-      setVintedConversations(newVinted);
-    }
+    const result = typeof updater === 'function' ? updater(allConversations) : updater;
+    // Separate back into marketplace and vinted
+    const marketplaceIds = conversations.map(c => c.id);
+    const newMarketplace = result.filter(c => marketplaceIds.includes(c.id));
+    const newVinted = result.filter(c => !marketplaceIds.includes(c.id));
+    setConversations(newMarketplace);
+    setVintedConversations(newVinted);
   };
 
   return (

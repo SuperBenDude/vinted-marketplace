@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(timeout 5 npm run dev:*)",
+      "Bash(dir \"C:\\\\Users\\\\nigel\\\\Downloads\"\" | findstr -i \"screen \")",
+      "Bash(ipconfig:*)",
+      "Bash(findstr:*)",
+      "Bash(netsh advfirewall firewall add rule name=\"Vite Dev Server\" dir=in action=allow protocol=TCP localport=5173)",
+      "Bash(npx:*)",
+      "Bash(curl:*)",
+      "Bash(copy \"C:\\\\Users\\\\nigel\\\\Downloads\\\\Untitled design.png\" \"c:\\\\Users\\\\nigel\\\\Documents\\\\marketplace\\\\public\\\\default-avatar.png\")",
+      "Bash(git add:*)",
+      "Bash(copy \"C:\\\\Users\\\\nigel\\\\Downloads\\\\Screenshot 2026-01-22 162801.ico\" \"c:\\\\Users\\\\nigel\\\\Documents\\\\marketplace\\\\public\\\\vinted-inbox-icon.ico\")",
+      "Bash(copy \"C:\\\\Users\\\\nigel\\\\Downloads\\\\Screenshot 2026-01-22 162951.ico\" \"c:\\\\Users\\\\nigel\\\\Documents\\\\marketplace\\\\public\\\\vinted-home-icon.ico\")",
+      "Bash(cmd /c copy \"C:\\\\Users\\\\nigel\\\\Downloads\\\\Screenshot 2026-01-22 162801.ico\" \"c:\\\\Users\\\\nigel\\\\Documents\\\\marketplace\\\\public\\\\vinted-inbox-icon.ico\")",
+      "Bash(cmd /c:*)",
+      "Bash(git init:*)",
+      "Bash(gh auth:*)",
+      "Bash(git push:*)",
+      "Bash(npm install:*)"
+    ]
+  }
+}
